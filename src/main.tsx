@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ThemeProvider, CssBaseline } from '@mui/material'
+import { BrowserRouter } from 'react-router-dom'
 import { mindfulTheme } from './games/core/theme'
 import App from './App.tsx'
 
@@ -70,9 +71,11 @@ document.head.appendChild(styleSheet)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={mindfulTheme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={mindfulTheme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
   </StrictMode>,
 )
